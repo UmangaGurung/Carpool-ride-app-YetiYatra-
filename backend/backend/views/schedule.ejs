@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('header') %>
+    <div class="admin-panel">
+        <h1>All Schedules</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>Leaving</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Empty Seats</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% schedules.forEach(schedule => { %>
+                <tr data-id="<%= schedule._id %>">
+                    <td class="user-info">
+                        <% if (schedule.image && schedule.image.data) { %>
+                            <img src="data:<%= schedule.image.contentType %>;base64,<%= schedule.image.data.toString('base64') %>" alt="User Photo" width="40px" height="40px">
+                        <% } else { %>
+                            <img src="/images/default.jpg" alt="Default Photo" width="40px" height="40px">
+                        <% } %>
+                        <span><%= schedule.username %></span>
+                    </td>
+                    <td><%= schedule.phone %></td>
+                    <td><%= schedule.leaving %></td>
+                    <td><%= schedule.destination %></td>
+                    <td><%= new Date(schedule.date).toLocaleDateString() %></td>
+                    <td><%= schedule.time %></td>
+                    <td><%= schedule.emptyseats %></td>
+                    <td>
+                        <button class="delete-btn" data-id="<%= schedule._id %>">Delete</button>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', async function() {
+                    const scheduleId = this.getAttribute('data-id');
+                    console.log("Attempting to delete schedule with ID:", scheduleId);
+
+                    try {
+                        const response = await fetch('/scheduledelete', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: scheduleId })
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            const row = document.querySelector(`tr[data-id='${scheduleId}']`);
+                            if (row) {
+                                row.remove();
+                            }
+                            alert(data.message);
+                        } else {
+                            const error = await response.json();
+                            alert(error.message);
+                        }
+                    } catch (error) {
+                        alert('Error deleting schedule');
+                        console.error("Error deleting schedule:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

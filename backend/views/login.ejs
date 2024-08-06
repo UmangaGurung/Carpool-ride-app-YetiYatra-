@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="logo-login">
+        <img src="images/logo.png" alt="logo image">
+    </div>
+
+    <div class="panel">
+        <h1>Login</h1>
+        <p>Please enter your username and password</p>
+
+        <form action="/adminlogin" method="post">
+            <div class="form-group">
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            
+            <button type="submit" class="submit-btn">Login</button>
+            <p class="end">Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>

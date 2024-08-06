@@ -1,0 +1,259 @@
+body {
+    font-family: Poppins;
+    background-color: #F8F8FB;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+.logo img{
+
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    left: 55%;
+}
+
+
+
+
+.admin-panel {
+    width: 60%;
+    /* max-width: 800px; */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 70px;
+    /*margin-left: 220px;*/
+    position: absolute;
+    left: 25%;
+    
+}
+
+.admin-panel h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead tr {
+    background-color: #22CFF9;
+    color: #ffffff;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #28A745;
+    color: #ffffff;
+}
+
+.delete-btn {
+    background-color: #E9383A;
+    color: #ffffff;
+    margin-left: 5px;
+
+}
+
+tbody img{
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+/*tbody span{
+    top: -20px;
+}*/
+
+table td.user-info {
+    display: flex;
+    align-items: center;
+}
+
+/*------ Register Page CSS Starts ------*/
+
+.panel {
+    width: 30%;
+    max-width: 800px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    margin-top: 70px;
+    position: relative;
+}
+
+.panel p{
+    font-family: Futura Bk BT;
+    color: #818589;
+    text-align: center;
+}
+
+.panel h1{
+
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+}
+
+form button{
+    padding: 15px;
+    font-family: Futura Bk BT;
+    background-color: #22CFF9;
+    color: #FFFF;
+    border-radius: 50px;
+    border:none;
+    width: 200px;
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.logo-login img{
+    position: absolute;
+    left: 46%;
+    width: 90px;
+    top: 10px;
+}
+
+form label{
+    font-family: Futura Bk BT;
+    color: #818589;
+}
+
+form input{
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #E1E1E1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+
+/* form{
+    
+
+
+} */
+.end{
+    margin-top: 70px;
+}
+
+/*------- Sidebar CSS Starts -------*/
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #171516;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-right: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #818589;
+    border-radius: 5px;
+
+}
+
+.sidebar ul li i{
+    margin-right: 10px;
+}
+        /* Style the container */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 300px;
+            margin: 10px 0;
+        }
+
+        /* Style the select box */
+        .custom-select select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            font-size: 11px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        /* Arrow style */
+        .custom-select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #6c757d;
+        }
+
+        /* Focus style */
+        .custom-select select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Option hover */
+        .custom-select select option:hover {
+            background-color: #e9ecef;
+        }

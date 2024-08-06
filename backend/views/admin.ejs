@@ -1,0 +1,53 @@
+<%- include('header') %>
+<div class="admin-panel">
+    <h1>Admin Panel</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+                <th>Gender</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user => { %>
+                <tr id="user-<%= user.username %>">
+                    <td class="user-info">
+                        <% if (user.image && user.image.data) { %>
+                            <img src="data:<%= user.image.contentType %>;base64,<%= user.image.data.toString('base64') %>" alt="User Photo" width="40px" height="40px">
+                        <% } else { %>
+                            <img src="default.jpg" alt="User Photo" width="40px" height="40px">
+                        <% } %>
+                        <span><%= user.username %></span>
+                    </td>
+                    <td>
+                        <span class="phone-number"><%= user.phone %></span>
+                        <input type="text" class="edit-phone" value="<%= user.phone %>" style="display:none;">
+                        <button class="save-phone-btn" data-username="<%= user.username %>" style="display:none;">Save</button>
+                    </td>
+                    <td>
+                        <span class="user-role"><%= user.isAdmin ? 'Admin' : 'User' %></span>
+                        <select class="edit-role" style="display:none;">
+                            <option value="true" <%= user.isAdmin ? 'selected' : '' %>>Admin</option>
+                            <option value="false" <%= !user.isAdmin ? 'selected' : '' %>>User</option>
+                        </select>
+                        <button class="save-role-btn" data-username="<%= user.username %>" style="display:none;">Save</button>
+                    </td>
+                    <td><%= user.gender %></td>
+                    <td>
+                        <button class="edit-btn edit-phone-btn" data-username="<%= user.username %>">Edit Phone</button>
+                        <button class="edit-btn edit-role-btn" data-username="<%= user.username %>">Edit Role</button>
+                        <button class="delete-btn" data-username="<%= user.username %>">Delete</button>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<script src="js/delete.js"></script>
+<script src="js/editphone.js"></script>
+<script src="js/editrole.js"></script>
+</body>
+</html>

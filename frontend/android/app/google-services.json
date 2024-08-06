@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1067974886164",
+    "project_id": "notifications-e1ad0",
+    "storage_bucket": "notifications-e1ad0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067974886164:android:9bd8dcae69fda789743801",
+        "android_client_info": {
+          "package_name": "com.example.yeti_yatra_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJMaSKOn9JvLCzUhdX_yoScdj5DzOGQs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

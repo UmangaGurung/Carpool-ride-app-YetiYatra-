@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="../images/logo.png" alt="logo image">
+    </div>
+    <div class="panel">
+        <h1>Create new User</h1>
+        <p>Please set user information</p>
+        <form action="/admin/adduser" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="username">Username</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label><br>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <div class="custom-select">
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image</label><br>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+            <p class="end"></p>
+        </form>
+    </div>
+</body>
+</html>
